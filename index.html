@@ -476,13 +476,13 @@ function GoogleMark({ size = 16 }) {
 function PillNav({ active, onJump }) {
   return (
     <div style={{ position: "fixed", top: 16, left: 0, right: 0, zIndex: 50, display: "flex", justifyContent: "center", pointerEvents: "none", padding: "0 12px" }}>
-      <nav className="pill-nav" style={{ pointerEvents: "auto", background: "var(--ink)", borderRadius: 999, padding: 5, display: "flex", alignItems: "center", gap: 1, boxShadow: "0 12px 30px -10px rgba(74,26,18,0.45), 0 2px 6px rgba(74,26,18,0.20)", maxWidth: "calc(100vw - 24px)", overflowX: "auto" }}>
-        <Monogram size={32} fg="var(--cream)" bg="var(--accent)" style={{ marginLeft: 3, marginRight: 6, flex: "0 0 auto" }} />
+      <nav className="pill-nav" style={{ pointerEvents: "auto", background: "var(--ink)", borderRadius: 999, padding: 4, display: "flex", alignItems: "center", gap: 1, boxShadow: "0 12px 30px -10px rgba(74,26,18,0.45), 0 2px 6px rgba(74,26,18,0.20)", maxWidth: "calc(100vw - 16px)", overflowX: "auto" }}>
+        <Monogram size={28} fg="var(--cream)" bg="var(--accent)" style={{ marginLeft: 2, marginRight: 4, flex: "0 0 auto" }} />
         {NAV_ITEMS.map((it) => {
           const on = active === it.id;
           return (
-            <button key={it.id} onClick={() => onJump(it.id)}
-              style={{ appearance: "none", border: 0, flex: "0 0 auto", background: on ? "var(--bg)" : "transparent", color: on ? "var(--ink)" : "color-mix(in oklab, var(--bg) 80%, transparent)", padding: "8px 12px", fontSize: 12, fontWeight: 500, letterSpacing: "-0.005em", borderRadius: 999, fontFamily: "var(--sans)", whiteSpace: "nowrap", transition: "background 220ms ease, color 220ms ease" }}>
+            <button key={it.id} onClick={() => onJump(it.id)} className="pill-nav-btn"
+              style={{ appearance: "none", border: 0, flex: "0 0 auto", background: on ? "var(--bg)" : "transparent", color: on ? "var(--ink)" : "color-mix(in oklab, var(--bg) 80%, transparent)", letterSpacing: "-0.005em", borderRadius: 999, fontFamily: "var(--sans)", whiteSpace: "nowrap", transition: "background 220ms ease, color 220ms ease", fontWeight: 500 }}>
               {it.label}
             </button>
           );
@@ -519,10 +519,6 @@ function Hero({ onJump, italicHeadlines }) {
           <img src="project/uploads/IMG_4841.jpg" alt="Talerz śniadaniowy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, color-mix(in oklab, var(--ink) 28%, transparent) 0%, transparent 30%, transparent 60%, color-mix(in oklab, var(--ink) 38%, transparent) 100%)" }} />
           <div style={{ position: "absolute", top: 14, left: 14, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--cream)", textTransform: "uppercase", opacity: 0.85 }}>№ 001 / przy Barskiej 39</div>
-          <div style={{ position: "absolute", bottom: 14, right: 14, display: "flex", alignItems: "center", gap: 8, color: "var(--cream)", opacity: 0.85 }}>
-            <span style={{ width: 7, height: 7, borderRadius: "50%", background: "var(--cream)", boxShadow: "0 0 0 3px color-mix(in oklab, var(--cream) 25%, transparent)", flex: "0 0 auto" }} />
-            <span style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.16em", textTransform: "uppercase" }}>otwarte teraz</span>
-          </div>
           <div style={{ position: "absolute", top: 14, right: 14, background: "var(--cream)", color: "var(--ink)", padding: "6px 12px", borderRadius: 999, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 14 }}>
             ☕ świeże mielenie codziennie
           </div>
@@ -655,7 +651,7 @@ function Menu({ italicHeadlines }) {
                 const on = key === active;
                 return (
                   <button key={key} onClick={() => setActive(key)} className="menu-tab-btn"
-                    style={{ appearance: "none", border: 0, background: "transparent", cursor: "pointer", fontFamily: "var(--serif)", fontSize: "clamp(18px, 3.5vw, 34px)", fontWeight: 600, letterSpacing: "-0.015em", fontStyle: on ? "italic" : "normal", color: on ? "var(--accent)" : "var(--muted)", opacity: on ? 1 : 0.55, padding: "6px 0", display: "flex", alignItems: "center", gap: 12, whiteSpace: "nowrap", textAlign: "left", transition: "opacity 200ms ease, color 200ms ease" }}>
+                    data-active={on ? "1" : "0"}>
                     <span className="tab-line" style={{ display: "inline-block", width: on ? 28 : 0, height: 2, background: "var(--accent)", transition: "width 240ms ease", flex: "0 0 auto" }} />
                     {v.label}
                   </button>
@@ -804,8 +800,8 @@ function Reviews({ italicHeadlines }) {
           <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
             {dist.map(d => <RatingBar key={d.stars} {...d} />)}
           </div>
-          <a href="#" onClick={e => e.preventDefault()} className="rating-cta">
-            <GoogleMark size={16} /> Zobacz wszystkie →
+          <a href="https://maps.app.goo.gl/dmZbieM1Rn2Kxwvb6" target="_blank" rel="noopener noreferrer" className="rating-cta">
+            <GoogleMark size={16} /> Zobacz wszystkie na żywo →
           </a>
         </div>
 
@@ -821,9 +817,9 @@ function Reviews({ italicHeadlines }) {
 
 function Info({ title, body }) {
   return (
-    <div>
+    <div style={{ minWidth: 0 }}>
       <div style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted)" }}>{title}</div>
-      <div style={{ marginTop: 8, fontSize: 17, fontWeight: 500, lineHeight: 1.45 }}>{body}</div>
+      <div style={{ marginTop: 8, fontSize: "clamp(14px, 3.6vw, 17px)", fontWeight: 500, lineHeight: 1.5, whiteSpace: "nowrap" }}>{body}</div>
     </div>
   );
 }
@@ -1055,6 +1051,9 @@ function App() {
         /* ── nav ── */
         .pill-nav { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
         .pill-nav::-webkit-scrollbar { display: none; }
+        .pill-nav-btn { padding: 7px 9px; font-size: 11px; }
+        @media (min-width: 480px)  { .pill-nav-btn { padding: 8px 12px; font-size: 12px; } }
+        @media (min-width: 768px)  { .pill-nav-btn { padding: 8px 14px; font-size: 12px; } }
 
         /* ── hero ── */
         .hero-title-row { margin-top: 16px; display: flex; flex-direction: column; gap: 16px; }
@@ -1094,9 +1093,45 @@ function App() {
         @media (min-width: 1200px) { .menu-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 56px; align-items: start; } }
         .menu-sticky { position: static; }
         @media (min-width: 1200px) { .menu-sticky { position: sticky; top: 110px; } }
-        .menu-tabs { display: flex; flex-direction: row; overflow-x: auto; gap: 0 8px; margin-top: 20px; padding-bottom: 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; flex-wrap: wrap; }
+        .menu-tabs { display: flex; flex-direction: row; overflow-x: auto; gap: 8px; margin-top: 20px; padding-bottom: 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; flex-wrap: wrap; }
         .menu-tabs::-webkit-scrollbar { display: none; }
         @media (min-width: 1200px) { .menu-tabs { flex-direction: column; overflow-x: visible; gap: 0; margin-top: 36px; flex-wrap: nowrap; } }
+
+        /* mobile/tablet: tabs as pill chips with bg */
+        .menu-tab-btn {
+          appearance: none; cursor: pointer;
+          font-family: var(--serif); font-weight: 600; letter-spacing: -0.015em;
+          font-size: 16px; padding: 9px 16px; border-radius: 999px;
+          display: inline-flex; align-items: center; gap: 12px;
+          white-space: nowrap; text-align: left;
+          background: color-mix(in oklab, var(--accent) 8%, transparent);
+          border: 1px solid color-mix(in oklab, var(--accent) 22%, transparent);
+          color: var(--accent); opacity: 0.7;
+          transition: background 200ms, opacity 200ms, transform 180ms;
+        }
+        .menu-tab-btn:hover { transform: translateY(-1px); opacity: 0.9; }
+        .menu-tab-btn[data-active="1"] {
+          background: var(--accent); color: var(--cream);
+          border-color: var(--accent); opacity: 1; font-style: italic;
+        }
+        @media (min-width: 768px) {
+          .menu-tab-btn { font-size: 18px; padding: 10px 20px; }
+        }
+        /* desktop: revert to original inline serif headings */
+        @media (min-width: 1200px) {
+          .menu-tab-btn {
+            font-size: clamp(22px, 2vw, 34px);
+            padding: 6px 0; border: 0; border-radius: 0;
+            background: transparent !important;
+            color: var(--muted); opacity: 0.55;
+          }
+          .menu-tab-btn:hover { transform: none; opacity: 0.85; }
+          .menu-tab-btn[data-active="1"] {
+            color: var(--accent); opacity: 1; font-style: italic;
+            background: transparent !important;
+          }
+        }
+
         .tab-line { display: none !important; }
         @media (min-width: 1200px) { .tab-line { display: inline-block !important; } }
 
@@ -1127,7 +1162,8 @@ function App() {
         /* ── visit ── */
         .visit-grid { margin-top: 16px; display: flex; flex-direction: column; gap: 40px; }
         @media (min-width: 1200px) { .visit-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: start; } }
-        .info-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+        .info-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 22px; }
+        @media (min-width: 480px) { .info-grid { grid-template-columns: 1fr 1fr; gap: 22px 18px; } }
         @media (min-width: 768px) { .info-grid { gap: 32px; } }
         .form-sticky { position: static; }
         @media (min-width: 1200px) { .form-sticky { position: sticky; top: 110px; } }
