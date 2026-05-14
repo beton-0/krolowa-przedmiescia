@@ -836,6 +836,56 @@ function Field({ label, placeholder, type = "text", textarea }) {
   );
 }
 
+function MapEmbed() {
+  const [loaded, setLoaded] = useState(false);
+  const mapSrc = "https://maps.google.com/maps?q=Kr%C3%B3lowa+Przedmie%C5%9Bcia%2C+ul.+Barska+39%2C+Krak%C3%B3w&t=&z=16&ie=UTF8&iwloc=&output=embed";
+  return (
+    <div style={{ marginTop: 32, borderRadius: 16, overflow: "hidden", height: 220, border: "1px solid var(--line)", position: "relative", background: "var(--bg-2)" }}>
+      {loaded ? (
+        <iframe
+          src={mapSrc}
+          width="100%"
+          height="100%"
+          style={{ border: 0, display: "block", filter: "sepia(20%) contrast(0.95)" }}
+          allowFullScreen=""
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+          title="Mapa — Królowa Przedmieścia, ul. Barska 39, Kraków"
+        />
+      ) : (
+        <button
+          type="button"
+          onClick={() => setLoaded(true)}
+          aria-label="Załaduj interaktywną mapę"
+          style={{
+            position: "absolute", inset: 0,
+            width: "100%", height: "100%",
+            border: 0, padding: 0, cursor: "pointer",
+            display: "flex", flexDirection: "column",
+            alignItems: "center", justifyContent: "center",
+            gap: 10,
+            background: "linear-gradient(135deg, var(--bg-2) 0%, color-mix(in oklab, var(--bg-2) 70%, var(--accent) 30%) 100%)",
+            backgroundImage: "linear-gradient(135deg, var(--bg-2) 0%, color-mix(in oklab, var(--bg-2) 65%, var(--accent) 35%) 100%), repeating-linear-gradient(45deg, transparent 0 12px, color-mix(in oklab, var(--accent) 6%, transparent) 12px 13px)",
+            backgroundBlendMode: "multiply",
+            transition: "filter 200ms ease",
+          }}
+          onMouseEnter={e => e.currentTarget.style.filter = "brightness(1.05)"}
+          onMouseLeave={e => e.currentTarget.style.filter = "brightness(1)"}
+        >
+          <Monogram size={48} fg="var(--cream)" bg="var(--accent)" style={{ boxShadow: "0 8px 18px rgba(74,26,18,0.25)" }} />
+          <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 18, fontWeight: 600, color: "var(--ink)", lineHeight: 1.2 }}>ul. Barska 39, Kraków</div>
+          <div style={{ display: "inline-flex", alignItems: "center", gap: 6, marginTop: 4, padding: "6px 14px", borderRadius: 999, background: "var(--ink)", color: "var(--cream)", fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase" }}>
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 1 a5 5 0 0 0 -5 5 c0 4 5 9 5 9 s5 -5 5 -9 a5 5 0 0 0 -5 -5z M8 8 a2 2 0 1 1 0 -4 a2 2 0 0 1 0 4z" />
+            </svg>
+            Pokaż mapę
+          </div>
+        </button>
+      )}
+    </div>
+  );
+}
+
 function Visit({ italicHeadlines }) {
   const [sent, setSent] = useState(false);
   return (
@@ -853,18 +903,7 @@ function Visit({ italicHeadlines }) {
               <Info title="Śniadania" body={<>Pn–Pt&nbsp;&nbsp;8:00 — 13:00<br />Sb–Nd&nbsp;&nbsp;9:00 — 14:00</>} />
               <Info title="Kontakt"   body={<>krolowa@przedmiescia.pl<br />+48 12 345 67 89</>} />
             </div>
-            <div style={{ marginTop: 32, borderRadius: 16, overflow: "hidden", height: 220, border: "1px solid var(--line)" }}>
-              <iframe
-                src="https://maps.google.com/maps?q=Kr%C3%B3lowa+Przedmie%C5%9Bcia%2C+ul.+Barska+39%2C+Krak%C3%B3w&t=&z=16&ie=UTF8&iwloc=&output=embed"
-                width="100%"
-                height="100%"
-                style={{ border: 0, display: "block", filter: "sepia(20%) contrast(0.95)" }}
-                allowFullScreen=""
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Mapa — Królowa Przedmieścia, ul. Barska 39, Kraków"
-              />
-            </div>
+            <MapEmbed />
           </div>
 
           <form onSubmit={e => { e.preventDefault(); setSent(true); setTimeout(() => setSent(false), 4500); }}
