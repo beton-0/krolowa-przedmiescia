@@ -16,7 +16,7 @@
 <meta property="og:site_name"   content="Królowa Przedmieścia" />
 <meta property="og:title"       content="Królowa Przedmieścia — Kawiarnia Specialty, Kraków" />
 <meta property="og:description" content="Kameralna kawiarnia specialty przy ul. Barskiej 39. Śniadania, kawa z Coffee Collective, ocena 4,7 ★ na Google." />
-<meta property="og:image"       content="project/uploads/IMG_4841.jpg" />
+<meta property="og:image"       content="project/uploads/IMG_4841.webp" />
 <meta property="og:image:width" content="1200" />
 <meta property="og:image:height" content="800" />
 <meta property="og:image:alt"   content="Talerz śniadaniowy — Królowa Przedmieścia" />
@@ -27,16 +27,65 @@
 <meta name="twitter:card"        content="summary_large_image" />
 <meta name="twitter:title"       content="Królowa Przedmieścia — Kawiarnia Specialty, Kraków" />
 <meta name="twitter:description" content="Kameralna kawiarnia specialty przy ul. Barskiej 39. Śniadania, kawa z Coffee Collective, ocena 4,7 ★ na Google." />
-<meta name="twitter:image"       content="project/uploads/IMG_4841.jpg" />
+<meta name="twitter:image"       content="project/uploads/IMG_4841.webp" />
+
+<!-- ── Structured data: LocalBusiness (Google rich results) ── -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "@id": "https://beton-0.github.io/krolowa-przedmiescia/#cafe",
+  "name": "Królowa Przedmieścia",
+  "image": "https://beton-0.github.io/krolowa-przedmiescia/project/uploads/IMG_4841.webp",
+  "url": "https://beton-0.github.io/krolowa-przedmiescia/",
+  "telephone": "+48-12-345-67-89",
+  "email": "krolowa@przedmiescia.pl",
+  "priceRange": "$$",
+  "servesCuisine": ["Coffee", "Breakfast", "Specialty Coffee"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "ul. Barska 39",
+    "addressLocality": "Kraków",
+    "postalCode": "30-307",
+    "addressCountry": "PL",
+    "addressRegion": "Małopolskie"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 50.0489,
+    "longitude": 19.9214
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "18:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday","Sunday"], "opens": "09:00", "closes": "17:00" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.7",
+    "reviewCount": "716",
+    "bestRating": "5",
+    "worstRating": "1"
+  },
+  "sameAs": [
+    "https://www.instagram.com/krolowa.przedmiescia/",
+    "https://maps.app.goo.gl/dmZbieM1Rn2Kxwvb6"
+  ]
+}
+</script>
 
 <!-- ── Favicon (SVG inline — monogram kawiarni) ── -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%238B2A1C'/%3E%3Cpath d='M6 18 L11 31 L16 21 L24 33 L32 21 L37 31 L42 18' fill='none' stroke='%23F5E2A8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='24' fill='%238B2A1C'/%3E%3Cpath d='M6 18 L11 31 L16 21 L24 33 L32 21 L37 31 L42 18' fill='none' stroke='%23F5E2A8' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
 <meta name="theme-color" content="#8B2A1C" />
 
+<!-- ── Preload critical resources ── -->
+<link rel="preload" as="image" href="project/uploads/IMG_4841.webp" fetchpriority="high" />
+<link rel="preload" as="script" href="vendor/react.js" />
+<link rel="preload" as="script" href="vendor/react-dom.js" />
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 
 <style>
   :root {
@@ -516,7 +565,7 @@ function Hero({ onJump, italicHeadlines }) {
         </div>
 
         <div className="hero-img">
-          <img src="project/uploads/IMG_4841.jpg" alt="Talerz śniadaniowy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
+          <img src="project/uploads/IMG_4841.webp" alt="Talerz śniadaniowy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, color-mix(in oklab, var(--ink) 28%, transparent) 0%, transparent 30%, transparent 60%, color-mix(in oklab, var(--ink) 38%, transparent) 100%)" }} />
           <div style={{ position: "absolute", top: 14, left: 14, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--cream)", textTransform: "uppercase", opacity: 0.85 }}>№ 001 / przy Barskiej 39</div>
           <div style={{ position: "absolute", top: 14, right: 14, background: "var(--cream)", color: "var(--ink)", padding: "6px 12px", borderRadius: 999, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 14 }}>
@@ -579,10 +628,10 @@ function About({ italicHeadlines }) {
 
         <div className="about-img-grid">
           <div className="about-img-tall" style={{ borderRadius: 16, overflow: "hidden", background: "var(--ink)" }}>
-            <img src="project/uploads/IMG_4838.jpg" alt="French toast z figami" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src="project/uploads/IMG_4838.webp" alt="French toast z figami" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
           <div style={{ borderRadius: 16, overflow: "hidden", background: "var(--ink)" }}>
-            <img src="project/uploads/IMG_4837.jpg" alt="Ziarno Coffee Collective" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src="project/uploads/IMG_4837.webp" alt="Ziarno Coffee Collective" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
           <div style={{ borderRadius: 16, background: "var(--accent)", color: "var(--cream)", padding: "22px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 160 }}>
             <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.75 }}>/ wypiek własny</div>
@@ -591,10 +640,10 @@ function About({ italicHeadlines }) {
             </div>
           </div>
           <div style={{ borderRadius: 16, overflow: "hidden", background: "var(--ink)" }}>
-            <img src="project/uploads/IMG_4834.jpg" alt="Jajecznica w porannym świetle" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src="project/uploads/IMG_4834.webp" alt="Jajecznica w porannym świetle" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
           <div style={{ borderRadius: 16, overflow: "hidden", background: "var(--ink)" }}>
-            <img src="project/uploads/IMG_4839.jpg" alt="Detal — róża z ogórka" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+            <img src="project/uploads/IMG_4839.webp" alt="Detal — róża z ogórka" style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
           </div>
         </div>
 
@@ -708,15 +757,15 @@ function Gallery({ italicHeadlines }) {
         </div>
 
         <div className="gal-grid">
-          <GalTile cls="gt-main"  l="zespół · kawa wolnych ludzi" img="project/uploads/IMG_4840.jpg" />
-          <GalTile cls="gt-tall"  l="french toast · figi"         img="project/uploads/IMG_4838.jpg" />
-          <GalTile cls="gt-small" l="jajecznica · poranek"        img="project/uploads/IMG_4834.jpg" />
-          <GalTile cls="gt-small" l="śniadanie · talerz"          img="project/uploads/IMG_4841.jpg" />
-          <GalTile cls="gt-small" l="ziarno · coffee collective"  img="project/uploads/IMG_4837.jpg" />
-          <GalTile cls="gt-wide"  l="avocado toast · letnio"      img="project/uploads/IMG_4836.jpg" />
-          <GalTile cls="gt-small" l="sezonowo · różowy talerz"    img="project/uploads/IMG_4835.jpg" />
-          <GalTile cls="gt-small" l="detal · róża z ogórka"       img="project/uploads/IMG_4839.jpg" />
-          <GalTile cls="gt-wide"  l="taca · poranek"              img="project/uploads/IMG_4833.jpg" />
+          <GalTile cls="gt-main"  l="zespół · kawa wolnych ludzi" img="project/uploads/IMG_4840.webp" />
+          <GalTile cls="gt-tall"  l="french toast · figi"         img="project/uploads/IMG_4838.webp" />
+          <GalTile cls="gt-small" l="jajecznica · poranek"        img="project/uploads/IMG_4834.webp" />
+          <GalTile cls="gt-small" l="śniadanie · talerz"          img="project/uploads/IMG_4841.webp" />
+          <GalTile cls="gt-small" l="ziarno · coffee collective"  img="project/uploads/IMG_4837.webp" />
+          <GalTile cls="gt-wide"  l="avocado toast · letnio"      img="project/uploads/IMG_4836.webp" />
+          <GalTile cls="gt-small" l="sezonowo · różowy talerz"    img="project/uploads/IMG_4835.webp" />
+          <GalTile cls="gt-small" l="detal · róża z ogórka"       img="project/uploads/IMG_4839.webp" />
+          <GalTile cls="gt-wide"  l="taca · poranek"              img="project/uploads/IMG_4833.webp" />
         </div>
       </div>
     </section>
@@ -897,6 +946,25 @@ function Visit({ italicHeadlines }) {
             <h2 className="display-heading" style={{ fontStyle: italicHeadlines ? "italic" : "normal", marginTop: 12 }}>
               Do zobaczenia<br /> przy <em style={{ fontWeight: 800 }}>ladzie</em><span style={{ color: "var(--accent)" }}>.</span>
             </h2>
+
+            {/* Storefront photo — tall portrait orientation */}
+            <div className="storefront-wrap">
+              <img src="project/uploads/storefront.webp"
+                   alt="Witryna kawiarni Królowa Przedmieścia, ul. Barska 39, Kraków"
+                   loading="lazy"
+                   onError={e => { e.currentTarget.style.display = "none"; }}
+                   className="storefront-img" />
+              <div className="storefront-placeholder">
+                <Monogram size={56} fg="var(--cream)" bg="var(--accent)" />
+                <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 22, fontWeight: 600, color: "var(--ink)" }}>Po tym nas poznasz</div>
+                <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted)" }}>witryna · ul. barska 39</div>
+              </div>
+              <div className="storefront-tag">
+                <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1 a5 5 0 0 0 -5 5 c0 4 5 9 5 9 s5 -5 5 -9 a5 5 0 0 0 -5 -5z M8 8 a2 2 0 1 1 0 -4 a2 2 0 0 1 0 4z" /></svg>
+                ul. Barska 39
+              </div>
+            </div>
+
             <div className="info-grid">
               <Info title="Adres"     body={<>ul. Barska 39<br />30-307 Kraków</>} />
               <Info title="Godziny"   body={<>Pn–Pt&nbsp;&nbsp;8:00 — 18:00<br />Sb–Nd&nbsp;&nbsp;9:00 — 17:00</>} />
@@ -958,7 +1026,14 @@ function Footer() {
                  onMouseLeave={e => e.currentTarget.style.opacity = 0.75}>{label}</a>
             ))}
           </div>
-          <div style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.6 }}>© 2026 — wszystko spokojnie</div>
+          <div style={{ fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.6, display: "flex", flexDirection: "column", gap: 8, alignItems: "center" }}>
+            <div>© 2026 — wszystko spokojnie</div>
+            <div style={{ display: "flex", gap: 14, opacity: 0.85 }}>
+              <a href="polityka-prywatnosci.html" style={{ transition: "opacity 200ms" }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.85}>Polityka prywatności</a>
+              <span aria-hidden="true">·</span>
+              <a href="regulamin.html" style={{ transition: "opacity 200ms" }} onMouseEnter={e => e.currentTarget.style.opacity = 1} onMouseLeave={e => e.currentTarget.style.opacity = 0.85}>Regulamin</a>
+            </div>
+          </div>
         </div>
       </div>
     </footer>
@@ -984,6 +1059,63 @@ function PaletteSwatches({ palette, setPalette }) {
 }
 
 // ─── app root ─────────────────────────────────────────────────────────────────
+
+// ─── sticky mobile CTA ────────────────────────────────────────────────────────
+
+function StickyMobileCTA({ active, onJump }) {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 600);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  const hide = !visible || active === "visit";
+  return (
+    <div className="sticky-cta" data-hidden={hide ? "1" : "0"} aria-hidden={hide}>
+      <a href="tel:+48123456789" className="sticky-cta-link sticky-cta-secondary" aria-label="Zadzwoń">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+        </svg>
+      </a>
+      <button onClick={() => onJump("visit")} className="sticky-cta-link sticky-cta-primary">
+        Wpadnij →
+      </button>
+    </div>
+  );
+}
+
+// ─── RODO cookie banner ───────────────────────────────────────────────────────
+
+function CookieBanner() {
+  const [open, setOpen] = useState(false);
+  useEffect(() => {
+    try {
+      const v = localStorage.getItem("kp-cookies");
+      if (!v) setOpen(true);
+    } catch (e) { setOpen(true); }
+  }, []);
+  const close = (choice) => {
+    try { localStorage.setItem("kp-cookies", choice); } catch (e) {}
+    setOpen(false);
+  };
+  if (!open) return null;
+  return (
+    <div className="cookie-banner" role="dialog" aria-labelledby="cookie-title">
+      <div className="cookie-body">
+        <div id="cookie-title" style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 18, fontWeight: 600, color: "var(--ink)", lineHeight: 1.2 }}>Plik cookie i tyle.</div>
+        <p style={{ margin: "8px 0 0", fontSize: 13, lineHeight: 1.5, color: "var(--muted)" }}>
+          Używamy niezbędnych plików cookie, żeby strona działała poprawnie. Pomijamy reklamowe i analityczne — chyba że zaakceptujesz.{" "}
+          <a href="polityka-prywatnosci.html" style={{ color: "var(--accent)", textDecoration: "underline" }}>Polityka prywatności</a>
+        </p>
+      </div>
+      <div className="cookie-actions">
+        <button onClick={() => close("rejected")} className="cookie-btn cookie-btn-secondary">Tylko niezbędne</button>
+        <button onClick={() => close("accepted")} className="cookie-btn cookie-btn-primary">Akceptuję wszystkie</button>
+      </div>
+    </div>
+  );
+}
 
 function App() {
   const [active, setActive] = useState("home");
@@ -1042,6 +1174,8 @@ function App() {
       <Reviews  italicHeadlines={italic} />
       <Visit    italicHeadlines={italic} />
       <Footer />
+      <StickyMobileCTA active={active} onJump={onJump} />
+      <CookieBanner />
 
       {TweaksPanel && (
         <TweaksPanel title="Tweaks">
@@ -1228,6 +1362,41 @@ function App() {
         /* ── visit ── */
         .visit-grid { margin-top: 16px; display: flex; flex-direction: column; gap: 40px; }
         @media (min-width: 1200px) { .visit-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 56px; align-items: start; } }
+
+        .storefront-wrap {
+          position: relative;
+          margin-top: 28px;
+          border-radius: 16px;
+          overflow: hidden;
+          aspect-ratio: 4 / 5;
+          max-width: 380px;
+          background: linear-gradient(135deg, var(--bg-2) 0%, color-mix(in oklab, var(--bg-2) 70%, var(--accent) 30%) 100%);
+          background-image: linear-gradient(135deg, var(--bg-2) 0%, color-mix(in oklab, var(--bg-2) 65%, var(--accent) 35%) 100%), repeating-linear-gradient(45deg, transparent 0 12px, color-mix(in oklab, var(--accent) 5%, transparent) 12px 13px);
+          background-blend-mode: multiply;
+          border: 1px solid var(--line);
+        }
+        @media (min-width: 768px) { .storefront-wrap { aspect-ratio: 3 / 4; max-width: 420px; } }
+        .storefront-img {
+          position: absolute; inset: 0; z-index: 2;
+          width: 100%; height: 100%;
+          object-fit: cover; display: block;
+        }
+        .storefront-placeholder {
+          position: absolute; inset: 0; z-index: 1;
+          display: flex; flex-direction: column;
+          align-items: center; justify-content: center;
+          gap: 12px; padding: 24px; text-align: center;
+        }
+        .storefront-tag {
+          position: absolute; bottom: 14px; left: 14px; z-index: 3;
+          display: inline-flex; align-items: center; gap: 6px;
+          padding: 6px 12px; border-radius: 999px;
+          background: var(--cream); color: var(--ink);
+          font-family: var(--mono); font-size: 10px;
+          letter-spacing: 0.18em; text-transform: uppercase;
+          box-shadow: 0 4px 10px rgba(74,26,18,0.18);
+        }
+
         .info-grid { margin-top: 28px; display: grid; grid-template-columns: 1fr; gap: 22px; }
         @media (min-width: 480px) { .info-grid { grid-template-columns: 1fr 1fr; gap: 22px 18px; } }
         @media (min-width: 768px) { .info-grid { gap: 32px; } }
@@ -1244,6 +1413,67 @@ function App() {
 
         /* ── marquee ── */
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+        /* ── sticky mobile CTA ── */
+        .sticky-cta {
+          position: fixed; left: 12px; right: 12px; bottom: 12px;
+          z-index: 45;
+          display: flex; gap: 8px;
+          padding: 6px;
+          background: var(--ink);
+          border-radius: 999px;
+          box-shadow: 0 16px 32px -10px rgba(74,26,18,0.45), 0 4px 12px rgba(74,26,18,0.25);
+          transform: translateY(0);
+          opacity: 1;
+          transition: transform 280ms cubic-bezier(.2,.7,.2,1), opacity 220ms ease;
+        }
+        .sticky-cta[data-hidden="1"] { transform: translateY(140%); opacity: 0; pointer-events: none; }
+        @media (min-width: 768px) { .sticky-cta { display: none; } }
+        .sticky-cta-link {
+          appearance: none; border: 0; cursor: pointer;
+          display: inline-flex; align-items: center; justify-content: center;
+          font-family: var(--sans); font-weight: 600; font-size: 14px;
+          border-radius: 999px;
+          transition: background 200ms ease, transform 200ms ease;
+          text-decoration: none;
+        }
+        .sticky-cta-primary { flex: 1; background: var(--accent); color: var(--cream); padding: 13px 18px; }
+        .sticky-cta-secondary { background: color-mix(in oklab, var(--cream) 18%, transparent); color: var(--cream); width: 44px; height: 44px; flex: 0 0 auto; }
+        .sticky-cta-secondary:hover { background: color-mix(in oklab, var(--cream) 28%, transparent); }
+        .sticky-cta-primary:hover { transform: translateY(-1px); }
+
+        /* ── cookie banner ── */
+        .cookie-banner {
+          position: fixed; left: 16px; right: 16px; bottom: 16px;
+          z-index: 60;
+          max-width: 480px;
+          background: color-mix(in oklab, var(--bg) 70%, white 30%);
+          border: 1px solid var(--line);
+          border-radius: 16px;
+          padding: 18px 18px 16px;
+          box-shadow: 0 20px 40px -16px rgba(74,26,18,0.25), 0 6px 12px rgba(74,26,18,0.10);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+        }
+        @media (min-width: 768px) { .cookie-banner { left: auto; right: 24px; bottom: 24px; } }
+        @media (max-width: 767px) { .cookie-banner { bottom: 80px; /* leave room for sticky CTA */ } }
+        .cookie-body { margin-bottom: 14px; }
+        .cookie-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+        .cookie-btn {
+          appearance: none; cursor: pointer;
+          font-family: var(--sans); font-size: 13px; font-weight: 600;
+          padding: 10px 14px; border-radius: 999px;
+          transition: background 180ms ease, transform 180ms ease;
+          flex: 1; min-width: 0;
+        }
+        .cookie-btn-primary { background: var(--accent); color: var(--cream); border: 0; }
+        .cookie-btn-primary:hover { transform: translateY(-1px); }
+        .cookie-btn-secondary {
+          background: transparent;
+          color: var(--ink);
+          border: 1px solid var(--line);
+        }
+        .cookie-btn-secondary:hover { background: color-mix(in oklab, var(--ink) 6%, transparent); }
       `}</style>
     </>
   );
