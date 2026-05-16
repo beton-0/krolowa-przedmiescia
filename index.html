@@ -9,25 +9,26 @@
 <meta name="description" content="Kameralna kawiarnia specialty przy ul. Barskiej 39 w Krakowie. Śniadania 8–13, kawa z Coffee Collective, mleka roślinne gratis. Ocena 4,7 ★ na Google (716 opinii)." />
 <meta name="keywords" content="kawiarnia kraków, specialty coffee kraków, śniadania kraków, barska 39, królowa przedmieścia, kawiarnia dębniki" />
 <meta name="author" content="Królowa Przedmieścia" />
-<link rel="canonical" href="https://queen.coffee/" />
+<link rel="canonical" href="https://beton-0.github.io/krolowa-przedmiescia/" />
 
 <!-- ── Open Graph ── -->
 <meta property="og:type"        content="restaurant" />
 <meta property="og:site_name"   content="Królowa Przedmieścia" />
 <meta property="og:title"       content="Królowa Przedmieścia — Kawiarnia Specialty, Kraków" />
 <meta property="og:description" content="Kameralna kawiarnia specialty przy ul. Barskiej 39. Śniadania, kawa z Coffee Collective, ocena 4,7 ★ na Google." />
-<meta property="og:image"       content="project/uploads/IMG_4841.webp" />
+<meta property="og:image"       content="https://beton-0.github.io/krolowa-przedmiescia/project/uploads/og-image.jpg" />
 <meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="800" />
-<meta property="og:image:alt"   content="Talerz śniadaniowy — Królowa Przedmieścia" />
-<meta property="og:url"         content="https://queen.coffee/" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type"  content="image/jpeg" />
+<meta property="og:image:alt"   content="Królowa Przedmieścia — Kawiarnia Specialty, ul. Barska 39, Kraków" />
+<meta property="og:url"         content="https://beton-0.github.io/krolowa-przedmiescia/" />
 <meta property="og:locale"      content="pl_PL" />
 
 <!-- ── Twitter / X Card ── -->
 <meta name="twitter:card"        content="summary_large_image" />
 <meta name="twitter:title"       content="Królowa Przedmieścia — Kawiarnia Specialty, Kraków" />
 <meta name="twitter:description" content="Kameralna kawiarnia specialty przy ul. Barskiej 39. Śniadania, kawa z Coffee Collective, ocena 4,7 ★ na Google." />
-<meta name="twitter:image"       content="project/uploads/IMG_4841.webp" />
+<meta name="twitter:image"       content="https://beton-0.github.io/krolowa-przedmiescia/project/uploads/og-image.jpg" />
 
 <!-- ── Structured data: LocalBusiness (Google rich results) ── -->
 <script type="application/ld+json">
@@ -149,9 +150,58 @@
     width: min(1240px, calc(100% - 48px));
     margin: 0 auto;
   }
+
+  /* ── Pre-React loading skeleton (hidden once React mounts) ── */
+  #boot-splash {
+    position: fixed; inset: 0; z-index: 999;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 18px;
+    background: #EDE3CF;
+    background-image: repeating-linear-gradient(45deg, transparent 0 18px, rgba(139,42,28,0.04) 18px 19px);
+  }
+  #boot-splash .monogram-pulse {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: #8B2A1C;
+    display: flex; align-items: center; justify-content: center;
+    animation: kp-pulse 1.6s ease-in-out infinite;
+  }
+  #boot-splash .label {
+    font-family: "JetBrains Mono", ui-monospace, monospace;
+    font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #8A6F5F;
+  }
+  @keyframes kp-pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(139,42,28,0.35); }
+    50%      { transform: scale(1.04); box-shadow: 0 0 0 18px rgba(139,42,28,0); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #boot-splash .monogram-pulse { animation: none; }
+  }
+  body.app-ready #boot-splash { display: none; }
+
+  /* ── Skip-to-content link (a11y) ── */
+  .skip-link {
+    position: absolute; left: -9999px; top: 8px;
+    background: #4A1A12; color: #F5E2A8;
+    padding: 10px 16px; border-radius: 8px;
+    font-family: "Inter", sans-serif; font-size: 14px; font-weight: 600;
+    z-index: 1000; text-decoration: none;
+  }
+  .skip-link:focus { left: 8px; }
 </style>
 </head>
 <body>
+  <a href="#home" class="skip-link">Przejdź do treści</a>
+
+  <div id="boot-splash" aria-hidden="true">
+    <div class="monogram-pulse">
+      <svg viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
+        <path d="M4 18 L10 34 L16 22 L24 34 L32 22 L38 34 L44 18" fill="none" stroke="#F5E2A8" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+    <div class="label">Królowa Przedmieścia · ładowanie</div>
+  </div>
+
   <div id="root"></div>
 
   <script src="vendor/react.js"></script>
@@ -425,6 +475,7 @@ const REVIEWS = [
   { name: "Lunatic Soul", initial: "L", avatarBg: "#8B2A1C", badge: "Lokalny przewodnik · 396 opinii",   when: "7 miesięcy temu", stars: 5, text: "Przyjemne miejsce, bardzo dobry przelew, specjalistyczne kawki, możliwość śniadania. Ogólnie wszystko na plus.",                                                                                                                                                                                          tags: ["Bardzo cicho", "Bez rezerwacji", "20–40 zł"] },
   { name: "Krzysztof W.", initial: "K", avatarBg: "#3E1F12", badge: "Lokalny przewodnik · 197 opinii",   when: "9 miesięcy temu", stars: 5, text: "Jeśli masz ochotę poczuć klimat starej francuskiej kawiarni w centrum Krakowa, ale z miłą obsługą — to świetne miejsce! Wpadliśmy około 17:00, a pani specjalnie zaparzyła dla nas kawę przelewową. Powiedziała, że zostało jej jeszcze trochę i że niedługo zamykają, więc może nam dolać — super miłe!", tags: ["Kolacja", "Bardzo cicho", "Klimat 5/5"] },
   { name: "Zuzanna C.",   initial: "Z", avatarBg: "#5A8262", badge: "8 opinii · 13 zdjęć",               when: "rok temu",        stars: 5, text: "Jedno z moich ulubionych miejsc w całym Krakowie! Top kawa i pyszne opcje śniadaniowe (szczególnie wiosenna pozycja z Jaśkiem). Klimat sprzyja spokojnym spotkaniom, niezależnie od tego czy usiądziemy w środku czy iście paryskim ogródku :)",                                                             tags: ["Śniadanie", "Na miejscu", "40–60 zł"] },
+  { name: "Renata T.",    initial: "R", avatarBg: "#B85C42", badge: "Lokalny przewodnik · 13 opinii · 27 zdjęć", when: "5 miesięcy temu", stars: 5, text: "Genialne miejsce! Kameralnie, bez zajęcia. Bardzo duży wybór kaw. I te cudowne śniadania! Małe menu ale jakie. Tost na żytnim chlebie z awokado, sałatą, cudownym sosem i jajem — coś wspaniałego. Przepyszne ciasta. Warto tu zajrzeć, to dwa kroki od ronda Grunwaldzkiego. Jest miły ogródek.", tags: ["40–60 zł", "Bardzo cicho", "Wege"] },
 ];
 
 const MENU = {
@@ -525,12 +576,13 @@ function GoogleMark({ size = 16 }) {
 function PillNav({ active, onJump }) {
   return (
     <div style={{ position: "fixed", top: 16, left: 0, right: 0, zIndex: 50, display: "flex", justifyContent: "center", pointerEvents: "none", padding: "0 12px" }}>
-      <nav className="pill-nav" style={{ pointerEvents: "auto", background: "var(--ink)", borderRadius: 999, padding: 4, display: "flex", alignItems: "center", gap: 1, boxShadow: "0 12px 30px -10px rgba(74,26,18,0.45), 0 2px 6px rgba(74,26,18,0.20)", maxWidth: "calc(100vw - 16px)", overflowX: "auto" }}>
+      <nav className="pill-nav" aria-label="Nawigacja główna" style={{ pointerEvents: "auto", background: "var(--ink)", borderRadius: 999, padding: 4, display: "flex", alignItems: "center", gap: 1, boxShadow: "0 12px 30px -10px rgba(74,26,18,0.45), 0 2px 6px rgba(74,26,18,0.20)", maxWidth: "calc(100vw - 16px)", overflowX: "auto", position: "relative" }}>
         <Monogram size={28} fg="var(--cream)" bg="var(--accent)" style={{ marginLeft: 2, marginRight: 4, flex: "0 0 auto" }} />
         {NAV_ITEMS.map((it) => {
           const on = active === it.id;
           return (
             <button key={it.id} onClick={() => onJump(it.id)} className="pill-nav-btn"
+              aria-current={on ? "page" : undefined}
               style={{ appearance: "none", border: 0, flex: "0 0 auto", background: on ? "var(--bg)" : "transparent", color: on ? "var(--ink)" : "color-mix(in oklab, var(--bg) 80%, transparent)", letterSpacing: "-0.005em", borderRadius: 999, fontFamily: "var(--sans)", whiteSpace: "nowrap", transition: "background 220ms ease, color 220ms ease", fontWeight: 500 }}>
               {it.label}
             </button>
@@ -568,8 +620,15 @@ function Hero({ onJump, italicHeadlines }) {
           <img src="project/uploads/IMG_4841.webp" alt="Talerz śniadaniowy" style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover" }} />
           <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, color-mix(in oklab, var(--ink) 28%, transparent) 0%, transparent 30%, transparent 60%, color-mix(in oklab, var(--ink) 38%, transparent) 100%)" }} />
           <div style={{ position: "absolute", top: 14, left: 14, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", color: "var(--cream)", textTransform: "uppercase", opacity: 0.85 }}>№ 001 / przy Barskiej 39</div>
-          <div style={{ position: "absolute", top: 14, right: 14, background: "var(--cream)", color: "var(--ink)", padding: "6px 12px", borderRadius: 999, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 14 }}>
-            ☕ świeże mielenie codziennie
+          <div style={{ position: "absolute", top: 14, right: 14, background: "var(--cream)", color: "var(--ink)", padding: "6px 12px", borderRadius: 999, fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 14, display: "inline-flex", alignItems: "center", gap: 8 }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M17 8h1a4 4 0 0 1 0 8h-1" />
+              <path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V8z" />
+              <line x1="6" y1="2" x2="6" y2="4" />
+              <line x1="10" y1="2" x2="10" y2="4" />
+              <line x1="14" y1="2" x2="14" y2="4" />
+            </svg>
+            świeże mielenie codziennie
           </div>
         </div>
 
@@ -871,17 +930,47 @@ function Info({ title, body }) {
   );
 }
 
-function Field({ label, placeholder, type = "text", textarea }) {
+function Field({ label, placeholder, type = "text", textarea, required, name }) {
   const Cmp = textarea ? "textarea" : "input";
   return (
     <label style={{ display: "block" }}>
-      <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.6 }}>{label}</div>
-      <Cmp type={type} placeholder={placeholder} rows={textarea ? 3 : undefined}
-        style={{ width: "100%", marginTop: 6, background: "transparent", border: 0, borderBottom: "1px solid color-mix(in oklab, var(--cream) 30%, transparent)", color: "var(--cream)", fontFamily: "var(--sans)", fontSize: 16, padding: "8px 0", outline: "none", resize: "none" }}
+      <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.6 }}>
+        {label}
+        {required && <span aria-hidden="true" style={{ color: "var(--cream)", opacity: 1, marginLeft: 4 }}>*</span>}
+      </div>
+      <Cmp
+        type={type} name={name} placeholder={placeholder} rows={textarea ? 3 : undefined}
+        required={required || undefined}
+        aria-required={required || undefined}
+        style={{ width: "100%", marginTop: 6, background: "transparent", border: 0, borderBottom: "1px solid color-mix(in oklab, var(--cream) 30%, transparent)", color: "var(--cream)", fontFamily: "var(--sans)", fontSize: 16, padding: "8px 0", outline: "none", resize: textarea ? "vertical" : "none", minHeight: textarea ? 80 : undefined }}
         onFocus={e => e.currentTarget.style.borderBottomColor = "var(--cream)"}
         onBlur={e => e.currentTarget.style.borderBottomColor = "color-mix(in oklab, var(--cream) 30%, transparent)"}
       />
     </label>
+  );
+}
+
+function StorefrontPhoto() {
+  // Show photo only if upload succeeds — no placeholder, no broken-image icon.
+  const [ok, setOk] = useState(null); // null = probing, true = loaded, false = missing
+  useEffect(() => {
+    const probe = new Image();
+    probe.onload  = () => setOk(true);
+    probe.onerror = () => setOk(false);
+    probe.src = "project/uploads/storefront.webp";
+  }, []);
+  if (ok !== true) return null;
+  return (
+    <div className="storefront-wrap">
+      <img src="project/uploads/storefront.webp"
+           alt="Witryna kawiarni Królowa Przedmieścia, ul. Barska 39, Kraków"
+           loading="lazy"
+           className="storefront-img" />
+      <div className="storefront-tag">
+        <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1 a5 5 0 0 0 -5 5 c0 4 5 9 5 9 s5 -5 5 -9 a5 5 0 0 0 -5 -5z M8 8 a2 2 0 1 1 0 -4 a2 2 0 0 1 0 4z" /></svg>
+        ul. Barska 39
+      </div>
+    </div>
   );
 }
 
@@ -947,23 +1036,8 @@ function Visit({ italicHeadlines }) {
               Do zobaczenia<br /> przy <em style={{ fontWeight: 800 }}>ladzie</em><span style={{ color: "var(--accent)" }}>.</span>
             </h2>
 
-            {/* Storefront photo — tall portrait orientation */}
-            <div className="storefront-wrap">
-              <img src="project/uploads/storefront.webp"
-                   alt="Witryna kawiarni Królowa Przedmieścia, ul. Barska 39, Kraków"
-                   loading="lazy"
-                   onError={e => { e.currentTarget.style.display = "none"; }}
-                   className="storefront-img" />
-              <div className="storefront-placeholder">
-                <Monogram size={56} fg="var(--cream)" bg="var(--accent)" />
-                <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: 22, fontWeight: 600, color: "var(--ink)" }}>Po tym nas poznasz</div>
-                <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--muted)" }}>witryna · ul. barska 39</div>
-              </div>
-              <div className="storefront-tag">
-                <svg width="11" height="11" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1 a5 5 0 0 0 -5 5 c0 4 5 9 5 9 s5 -5 5 -9 a5 5 0 0 0 -5 -5z M8 8 a2 2 0 1 1 0 -4 a2 2 0 0 1 0 4z" /></svg>
-                ul. Barska 39
-              </div>
-            </div>
+            {/* Storefront photo — shown only when an actual image exists at project/uploads/storefront.webp */}
+            <StorefrontPhoto />
 
             <div className="info-grid">
               <Info title="Adres"     body={<>ul. Barska 39<br />30-307 Kraków</>} />
@@ -984,12 +1058,15 @@ function Visit({ italicHeadlines }) {
               Współpraca, eventy, autorskie wieczory.
             </div>
             <div style={{ marginTop: 24, display: "grid", gap: 14 }}>
-              <Field label="Imię"      placeholder="Jan Kowalski" />
-              <Field label="Email"     placeholder="jan@adres.pl" type="email" />
-              <Field label="Wiadomość" placeholder="Krótka wiadomość…" textarea />
+              <Field label="Imię"      name="name"    placeholder="Jan Kowalski"      required />
+              <Field label="Email"     name="email"   placeholder="jan@adres.pl"      type="email" required />
+              <Field label="Wiadomość" name="message" placeholder="Krótka wiadomość…" textarea required />
+            </div>
+            <div style={{ marginTop: 10, fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", opacity: 0.45 }}>
+              * pola wymagane
             </div>
             <button type="submit"
-              style={{ marginTop: 22, appearance: "none", border: 0, background: "var(--cream)", color: "var(--ink)", padding: "15px 20px", borderRadius: 999, fontSize: 15, fontWeight: 600, letterSpacing: "-0.005em", fontFamily: "var(--sans)", width: "100%", transition: "background 200ms ease", cursor: "pointer" }}
+              style={{ marginTop: 18, appearance: "none", border: 0, background: "var(--cream)", color: "var(--ink)", padding: "15px 20px", borderRadius: 999, fontSize: 15, fontWeight: 600, letterSpacing: "-0.005em", fontFamily: "var(--sans)", width: "100%", transition: "background 200ms ease", cursor: "pointer" }}
               onMouseEnter={e => e.currentTarget.style.background = "#FFF1B8"}
               onMouseLeave={e => e.currentTarget.style.background = "var(--cream)"}>
               {sent ? "Wysłane — dzięki ✓" : "Wyślij wiadomość →"}
@@ -1059,6 +1136,31 @@ function PaletteSwatches({ palette, setPalette }) {
 }
 
 // ─── app root ─────────────────────────────────────────────────────────────────
+
+// ─── back to top ──────────────────────────────────────────────────────────────
+
+function BackToTop() {
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 800);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  return (
+    <button
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+      className="back-to-top"
+      data-hidden={visible ? "0" : "1"}
+      aria-label="Wróć na górę strony"
+      title="Wróć na górę"
+    >
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <polyline points="18 15 12 9 6 15" />
+      </svg>
+    </button>
+  );
+}
 
 // ─── sticky mobile CTA ────────────────────────────────────────────────────────
 
@@ -1174,6 +1276,7 @@ function App() {
       <Reviews  italicHeadlines={italic} />
       <Visit    italicHeadlines={italic} />
       <Footer />
+      <BackToTop />
       <StickyMobileCTA active={active} onJump={onJump} />
       <CookieBanner />
 
@@ -1220,9 +1323,15 @@ function App() {
         }
 
         /* ── nav ── */
-        .pill-nav { scrollbar-width: none; -webkit-overflow-scrolling: touch; }
+        .pill-nav {
+          scrollbar-width: none; -webkit-overflow-scrolling: touch;
+          /* Fade edges so users see the nav is horizontally scrollable */
+          -webkit-mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+                  mask-image: linear-gradient(to right, transparent 0, #000 20px, #000 calc(100% - 20px), transparent 100%);
+        }
         .pill-nav::-webkit-scrollbar { display: none; }
         .pill-nav-btn { padding: 7px 9px; font-size: 11px; }
+        .pill-nav-btn[aria-current="page"] { font-weight: 600; }
         @media (min-width: 480px)  { .pill-nav-btn { padding: 8px 12px; font-size: 12px; } }
         @media (min-width: 768px)  { .pill-nav-btn { padding: 8px 14px; font-size: 12px; } }
 
@@ -1264,9 +1373,24 @@ function App() {
         @media (min-width: 1200px) { .menu-grid { display: grid; grid-template-columns: 1fr 1.55fr; gap: 56px; align-items: start; } }
         .menu-sticky { position: static; }
         @media (min-width: 1200px) { .menu-sticky { position: sticky; top: 110px; } }
-        .menu-tabs { display: flex; flex-direction: row; overflow-x: auto; gap: 8px; margin-top: 20px; padding-bottom: 6px; scrollbar-width: none; -webkit-overflow-scrolling: touch; flex-wrap: wrap; }
+        .menu-tabs {
+          display: flex; flex-direction: row;
+          overflow-x: auto; gap: 8px;
+          margin-top: 20px; padding-bottom: 6px;
+          scrollbar-width: none; -webkit-overflow-scrolling: touch;
+          flex-wrap: nowrap;
+          /* Fade right edge so user sees more content scrolls into view */
+          -webkit-mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 32px), transparent 100%);
+                  mask-image: linear-gradient(to right, #000 0, #000 calc(100% - 32px), transparent 100%);
+        }
         .menu-tabs::-webkit-scrollbar { display: none; }
-        @media (min-width: 1200px) { .menu-tabs { flex-direction: column; overflow-x: visible; gap: 0; margin-top: 36px; flex-wrap: nowrap; } }
+        @media (min-width: 1200px) {
+          .menu-tabs {
+            flex-direction: column; overflow-x: visible;
+            gap: 0; margin-top: 36px;
+            -webkit-mask-image: none; mask-image: none;
+          }
+        }
 
         /* mobile/tablet: tabs as pill chips with bg */
         .menu-tab-btn {
@@ -1414,6 +1538,25 @@ function App() {
         /* ── marquee ── */
         @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
+        /* ── back to top ── */
+        .back-to-top {
+          position: fixed;
+          right: 16px; bottom: 16px;
+          z-index: 44;
+          width: 44px; height: 44px;
+          border: 0; border-radius: 50%;
+          background: var(--ink); color: var(--cream);
+          display: inline-flex; align-items: center; justify-content: center;
+          cursor: pointer;
+          box-shadow: 0 12px 24px -8px rgba(74,26,18,0.40), 0 4px 10px rgba(74,26,18,0.20);
+          transition: transform 220ms cubic-bezier(.2,.7,.2,1), opacity 220ms ease, background 200ms ease;
+          opacity: 1;
+        }
+        .back-to-top:hover { background: var(--accent); transform: translateY(-3px); }
+        .back-to-top[data-hidden="1"] { transform: translateY(120%); opacity: 0; pointer-events: none; }
+        /* On mobile sticky CTA occupies bottom — float button above it */
+        @media (max-width: 767px) { .back-to-top { bottom: 80px; right: 12px; width: 40px; height: 40px; } }
+
         /* ── sticky mobile CTA ── */
         .sticky-cta {
           position: fixed; left: 12px; right: 12px; bottom: 12px;
@@ -1480,6 +1623,8 @@ function App() {
 }
 
 ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+// Hide pre-React loading skeleton once the first render commits.
+requestAnimationFrame(() => requestAnimationFrame(() => document.body.classList.add("app-ready")));
   </script>
 </body>
 </html>
