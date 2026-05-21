@@ -816,12 +816,10 @@ function Gallery({ italicHeadlines }) {
           <GalTile cls="gt-main"  l="zespół · za barem"           img="project/uploads/IMG_4840.webp" />
           <GalTile cls="gt-tall"  l="french toast · figi"         img="project/uploads/IMG_4838.webp" />
           <GalTile cls="gt-small" l="jajecznica · poranek"        img="project/uploads/IMG_4834.webp" />
-          <GalTile cls="gt-small" l="śniadanie · po naszemu"      img="project/uploads/IMG_4841.webp" />
           <GalTile cls="gt-small" l="ziarno · coffee collective"  img="project/uploads/IMG_4837.webp" />
           <GalTile cls="gt-wide"  l="avocado toast · po letniemu" img="project/uploads/IMG_4836.webp" />
           <GalTile cls="gt-small" l="sezonowo · różowy talerz"    img="project/uploads/IMG_4835.webp" />
           <GalTile cls="gt-small" l="detal · róża z ogórka"       img="project/uploads/IMG_4839.webp" />
-          <GalTile cls="gt-wide"  l="taca · poranek"              img="project/uploads/IMG_4833.webp" />
         </div>
       </div>
     </section>
@@ -1090,7 +1088,6 @@ function Footer() {
             {[
               { label: "Instagram", href: "https://www.instagram.com/krolowa.przedmiescia/" },
               { label: "Spotify",   href: "#" },
-              { label: "Newsletter",href: "#" },
             ].map(({ label, href }) => (
               <a key={label} href={href}
                  target={href !== "#" ? "_blank" : undefined}
@@ -1370,7 +1367,7 @@ function App() {
         .menu-tabs {
           display: flex; flex-direction: row;
           overflow-x: auto; gap: 8px;
-          margin-top: 20px; padding-bottom: 6px;
+          margin-top: 14px; padding: 6px 0;
           scrollbar-width: none; -webkit-overflow-scrolling: touch;
           flex-wrap: nowrap;
           /* Fade right edge so user sees more content scrolls into view */
