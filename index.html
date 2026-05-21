@@ -480,7 +480,7 @@ const REVIEWS = [
 
 const MENU = {
   kawy:      { label: "Kawy",          blurb: "Specialty z palarni Coffee Collective i sezonowych mikropalarni. Mleka roślinne bez dopłaty.", items: [
-    { name: "Espresso",           desc: "Nasz sygnaturalny, słodko-rozedrgany shot.",                price: "11" },
+    { name: "Espresso",           desc: "Nasz znak rozpoznawczy — słodki, pełny shot.",              price: "11" },
     { name: "Espresso macchiato", desc: "Espresso z czubkiem mikropianki.",                          price: "13" },
     { name: "Americano",          desc: "Espresso rozcieńczone gorącą wodą.",                        price: "14" },
     { name: "Biała kawa",         desc: "Klasyka z mlekiem — tak jak u babci.",                      price: "16" },
@@ -515,7 +515,7 @@ const MENU = {
     { name: "Apres bici 0%",       desc: "Bezalkoholowe, lekko chmielone.",              price: "15" },
     { name: "Veloipa 0%",          desc: "Bezalkoholowa IPA z Krakowa.",                 price: "15" },
   ]},
-  sniadania: { label: "Śniadania",     blurb: "Pn–Pt 8:00 — 13:00, Sb–Nd 9:00 — 14:00. Z chleba z piekarni Maglownia.", items: [
+  sniadania: { label: "Śniadania",     blurb: "Na chlebie z piekarni Maglownia. Z masłem i bez pośpiechu.", items: [
     { name: "Jajecznica",              desc: "Na maśle, z chlebem, szczypiorkiem.",      price: "32 / 40" },
     { name: "Granola",                 desc: "Domowa, z jogurtem i sezonowym owocem.",   price: "27" },
     { name: "Tost z awokado",          desc: "Awokado, jajko poche, chili, limonka.",    price: "37" },
@@ -637,7 +637,7 @@ function Hero({ onJump, italicHeadlines }) {
             Najlepsza kawa po południowej stronie Wisły.
           </div>
           <div style={{ fontSize: 16, color: "var(--muted)", lineHeight: 1.6 }}>
-            Specialty kawa, śniadania na ciepło i muzyka ustawiona zawsze w taki sposób, żeby chciało się zostać dłużej. Wpadnij — czeka ulubiony stolik.
+            Kawa specialty, śniadania na ciepło i muzyka, która zatrzymuje na dłużej. Wpadnij — czeka ulubiony stolik.
           </div>
           <div>
             <button onClick={() => onJump("menu")} className="btn-primary">
@@ -681,7 +681,7 @@ function About({ italicHeadlines }) {
             Królowa Przedmieścia to kameralna kawiarnia przy ulicy Barskiej, w której śniadanie zamienia się w południe, południe w popołudnie, a popołudnie w „jeszcze jedną kawę". Pracujemy z palarnią Coffee Collective, lokalnymi piekarniami i własnym pomysłem na poranek.
           </p>
           <div style={{ color: "var(--muted)", fontSize: 16, lineHeight: 1.7 }}>
-            Tu nie ma muzaka, sztucznego oświetlenia ani ekspresu na guzik. Jest płyta z 1978, gęsta cisza książki, dobrze zaparzony filtr i sezon, który dyktuje kartę. Mleka roślinne zawsze bez dopłaty — bo dlaczego miałoby być inaczej.
+            Tu nie ma muzyki z supermarketu, sztucznego światła ani ekspresu na guzik. Jest płyta z 1978, dobrze zaparzony filtr i sezon, który dyktuje kartę. Mleka roślinne zawsze bez dopłaty — bo dlaczego miałoby być inaczej.
           </div>
         </div>
 
@@ -695,7 +695,7 @@ function About({ italicHeadlines }) {
           <div style={{ borderRadius: 16, background: "var(--accent)", color: "var(--cream)", padding: "22px 20px", display: "flex", flexDirection: "column", justifyContent: "space-between", minHeight: 160 }}>
             <div style={{ fontFamily: "var(--mono)", fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", opacity: 0.75 }}>/ wypiek własny</div>
             <div style={{ fontFamily: "var(--serif)", fontStyle: "italic", fontSize: "clamp(20px, 3vw, 30px)", lineHeight: 1.05, letterSpacing: "-0.02em", fontWeight: 600 }}>
-              Świeża drożdżówka<br />każdego ranka<br />od 8:00.
+              Świeże ciasta<br />z piekarnika<br />od 8:00.
             </div>
           </div>
           <div style={{ borderRadius: 16, overflow: "hidden", background: "var(--ink)" }}>
@@ -707,7 +707,7 @@ function About({ italicHeadlines }) {
         </div>
 
         <div className="stats-grid" style={{ marginTop: 48, borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
-          {[["07","lat parzymy"],["31","pozycji w karcie"],["3","lokalne palarnie"],["∞","powolnych poranków"]].map(([n, l], i) => (
+          {[["07","lat parzymy"],["39","pozycji w karcie"],["0","ekspresów na guzik"],["∞","powolnych poranków"]].map(([n, l], i) => (
             <div key={i} className="stat-cell">
               <div style={{ fontFamily: "var(--serif)", fontSize: "clamp(44px, 8vw, 64px)", fontWeight: 700, letterSpacing: "-0.03em", lineHeight: 1, color: "var(--accent)" }}>{n}</div>
               <div style={{ marginTop: 8, fontFamily: "var(--mono)", fontSize: 11, letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--muted)" }}>{l}</div>
@@ -816,12 +816,12 @@ function Gallery({ italicHeadlines }) {
         </div>
 
         <div className="gal-grid">
-          <GalTile cls="gt-main"  l="zespół · kawa wolnych ludzi" img="project/uploads/IMG_4840.webp" />
+          <GalTile cls="gt-main"  l="zespół · za barem"           img="project/uploads/IMG_4840.webp" />
           <GalTile cls="gt-tall"  l="french toast · figi"         img="project/uploads/IMG_4838.webp" />
           <GalTile cls="gt-small" l="jajecznica · poranek"        img="project/uploads/IMG_4834.webp" />
-          <GalTile cls="gt-small" l="śniadanie · talerz"          img="project/uploads/IMG_4841.webp" />
+          <GalTile cls="gt-small" l="śniadanie · po naszemu"      img="project/uploads/IMG_4841.webp" />
           <GalTile cls="gt-small" l="ziarno · coffee collective"  img="project/uploads/IMG_4837.webp" />
-          <GalTile cls="gt-wide"  l="avocado toast · letnio"      img="project/uploads/IMG_4836.webp" />
+          <GalTile cls="gt-wide"  l="avocado toast · po letniemu" img="project/uploads/IMG_4836.webp" />
           <GalTile cls="gt-small" l="sezonowo · różowy talerz"    img="project/uploads/IMG_4835.webp" />
           <GalTile cls="gt-small" l="detal · róża z ogórka"       img="project/uploads/IMG_4839.webp" />
           <GalTile cls="gt-wide"  l="taca · poranek"              img="project/uploads/IMG_4833.webp" />
