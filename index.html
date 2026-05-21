@@ -1430,6 +1430,7 @@ function App() {
         .gal-tile { grid-column: span 1; grid-row: span 1; }
         .gt-main { grid-column: span 2; grid-row: span 2; }
         .gt-tall { }
+        @media (max-width: 767px) { .gt-tall { display: none; } }
         @media (min-width: 768px) { .gt-tall { grid-row: span 2; } }
         .gt-wide { grid-column: span 2; }
         @media (min-width: 1200px) { .gt-main img { object-position: center 45%; } }
