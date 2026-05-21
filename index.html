@@ -1424,7 +1424,7 @@ function App() {
         /* ── gallery ── */
         .gallery-header { display: flex; flex-direction: column; gap: 12px; }
         @media (min-width: 768px) { .gallery-header { flex-direction: row; justify-content: space-between; align-items: flex-end; gap: 24px; } }
-        .gal-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 10px; }
+        .gal-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(2, 1fr); grid-auto-rows: 150px; gap: 10px; grid-auto-flow: dense; }
         @media (min-width: 768px)  { .gal-grid { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 170px; gap: 12px; margin-top: 40px; } }
         @media (min-width: 1200px) { .gal-grid { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 180px; gap: 14px; margin-top: 48px; } }
         .gal-tile { grid-column: span 1; grid-row: span 1; }
